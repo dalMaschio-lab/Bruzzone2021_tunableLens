@@ -39,8 +39,8 @@ class wholeBrain:
                 reg=regressors[i].reshape(-1,1)
                 for j in range(rows):
                     cell=(traces[j]).reshape(-1,1)
-                    coeffs0=clf.fit(reg,cell[2:len(reg)]).coef_ 
-                    error=metrics.mean_squared_error(reg,cell[2:len(reg)])
+                    coeffs0=clf.fit(reg,cell).coef_ 
+                    error=metrics.mean_squared_error(reg,cell)
                     Tscore=np.divide(coeffs0,error)
                     Tscores_int.append(Tscore)
 
@@ -50,9 +50,9 @@ class wholeBrain:
         elif len(regressors)==1:
             reg=regressors.reshape(-1,1)
             for j in range(rows):
-                cell=(traces[j])
-                coeffs0=clf.fit(reg,cell[2:len(reg)]).coef_ 
-                error=metrics.mean_squared_error(reg,cell[2:len(reg)])
+                cell=(traces[j]).reshape(-1,1)
+                coeffs0=clf.fit(reg,cell).coef_ 
+                error=metrics.mean_squared_error(reg,cell)
                 Tscore=np.divide(coeffs0,error)
                 Tscores.append(Tscore)
 

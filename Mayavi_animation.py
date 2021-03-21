@@ -15,19 +15,10 @@ spacing=6
 all_cells=wholeBrain.cells_extraction(file_path, planes, spacing)   #see function in 'wholebrain_analysis.py'
 
 stim=(([1]*17)+([0]*150))*15+([0]*154) 
-reg=np.convolve(np.array(stim), wholeBrain.calcium_kernel(1,4), mode='same').reshape(1, len(stim))    #see function in 'wholebrain_analysis.py'
+regressor=np.convolve(np.array(stim), wholeBrain.calcium_kernel(1,4), mode='same').reshape(1,-1)    #see function in 'wholebrain_analysis.py'
 
+Tscores=wholeBrain.correlation(all_cells[:,2375:], regressor)
 
-# x2=all_cells[:,0]
-# y2=all_cells[:,1]
-# z2=all_cells[:,2]
-# #z3=all_cells[:,2]
-
-# s2=all_cells[:,0]
-
-
-
-Tscores=wholeBrain.correlation(all_cells[:,2:], reg)
 
 percentile=0.95
 threshold=np.quantile(Tscores,percentile)
