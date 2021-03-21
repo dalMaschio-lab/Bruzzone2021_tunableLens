@@ -9,12 +9,12 @@ The source code must be compiled and deployed to the Arduino Mega 2560 board fol
 <https://www.arduino.cc/en/software>
 2) Connect the Arduino Mega to the PC with the USB cable
 3) Open the “.ino” file and create a new project if required
-4) Select “Tools”-->”Boards”-->”Arduino Mega 2560”
+4) Select “Tools”&#8594;”Boards”&#8594;”Arduino Mega 2560”
 5) If required, modify in the source code the parameters to match the experimental conditions
 6) By clicking the upload button, the code is compiled and deployed to the Arduino Mega 2560 board   
 
 The wiring is performed in the following way:   
->The pin 47 of the Arduino Mega 2560 corresponds to the counter input and it is connected (together with the ground (GND)) to the ”Frame Sync” TTL (0-5V) output of >the Microscope Control Unit via a coaxial cable. The pins 18 and 19 are, respectively, TX and RX of the UART serial port 1; they are connected to the corresponding >RX/TX pins of the ETL driver UART serial port, as described in the ETL driver manual.   
+>The pin 47 of the Arduino Mega 2560 corresponds to the counter input and it is connected (together with the ground (GND)) to the ”Frame Sync” TTL (0-5V) output of the Microscope Control Unit via a coaxial cable. The pins 18 and 19 are, respectively, TX and RX of the UART serial port 1; they are connected to the corresponding RX/TX pins of the ETL driver UART serial port, as described in the ETL driver manual.   
 
 ---
 
