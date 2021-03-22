@@ -124,3 +124,40 @@ class wholeBrain:
                     
         return all_cells
 
+
+def match_planes(tseries, zstack, n_planes):
+    # This function is used to match tseries planes with zstack planes. 
+    # It receives the tseries 3D array (frames, height, lenght) the zstack 3D array (planes, height, lenght) and the number of planes
+    # It returns an array in which:
+        # the 0 column contains the tseries plane;
+        # the 1 column contains the zstack plane;
+        # the 2 column contains the correlation coefficient between the two 
+
+    correlation_score=[]
+    zstack_plane=[]
+    tseries_plane=[]
+    for p in range(n_planes):
+        print(f't_plane #{p}')
+        seq=[]
+        for i in range(p, len(tseries), n_planes):
+            print(f'average of the following frame: {i}')
+            seq.append(tseries[i])
+        seq=np.asarray(seq)
+        seq_01=seq.mean(axis=0)
+        print('Mean done. \nStarting the correlations')
+
+        seq=[]
+        scores=[]
+        for j in range(len(zstack)): 
+            print(f'Starting the correlation of the plane {j}')
+            corr=np.corrcoef(seq_01.ravel(), zstack[j].ravel())
+            scores.append(corr[0,1])
+        tseries_plane.append(p)
+        zstack_plane.append(np.argmax(scores))
+        correlation_score.append(np.argmax(scores))
+        print(f'the highest correlation value for t_series {p} is {np.max(scores)} with z_plane {np.argmax(scores)}')
+        scores=[]
+            
+    final=np.column_stack((tseries_plane, zstack_plane,correlation_score))
+        
+    return final
