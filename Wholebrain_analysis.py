@@ -149,7 +149,6 @@ def match_planes(tseries, zstack, n_planes):
         seq=[]
         scores=[]
         for j in range(len(zstack)): 
-            print(f'Starting the correlation of the plane {j}')
             corr=np.corrcoef(seq_01.ravel(), zstack[j].ravel())
             scores.append(corr[0,1])
         tseries_plane.append(p)
