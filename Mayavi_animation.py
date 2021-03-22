@@ -1,9 +1,6 @@
 
 import numpy as np
-from sklearn import preprocessing
-import matplotlib.pyplot as plt
 import scipy as sc
-from sklearn import linear_model, metrics, preprocessing 
 from mayavi import mlab
 from tvtk.api import tvtk
 from Wholebrain_analysis import wholeBrain
@@ -95,8 +92,8 @@ def anim():
         f = mlab.gcf()
         f.scene.movie_maker.record = True
         zeros = '0'*(padding - len(all_cells[0]))
-        #filename = os.path.join(out_path, '{}_{}{}{}'.format(prefix, zeros, i, ext))
-        #mlab.savefig(filename=filename)
+        filename = os.path.join(out_path, '{}_{}{}{}'.format(prefix, zeros, i, ext))
+        mlab.savefig(filename=filename)
         yield    
 anim()
 mlab.show()
