@@ -2,7 +2,7 @@
 
 Repository of the codes used 
 
-**_Arduino.ino_**
+**_Arduino.ino_**   
 Code for the control of the ETL during volumetric scanning via the Arduino Mega 2560 board.
 The source code must be compiled and deployed to the Arduino Mega 2560 board following these steps:
 1) Download and install the Arduino IDE, following the instruction on the web site:
