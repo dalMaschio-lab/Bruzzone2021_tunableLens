@@ -41,7 +41,6 @@ activity_percentile=np.asarray([sc.stats.zscore(all_cells[i, 3:]) for i in range
 #    else:
 #        s_clusters.append(5)   #5 is a random number
 
-#s_clusters=np.asarray(s_clusters)
 #all_cells_clusters=(all_cells[:,0],all_cells[:,1],all_cells[:,2],s_clusters)
 #all_cells_clusters=np.asarray(all_cells_clusters).T
 #all_cells_clusters=all_cells_clusters+activity_percentile
@@ -52,10 +51,6 @@ activity_percentile=np.asarray([sc.stats.zscore(all_cells[i, 3:]) for i in range
 #all_cluster2=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==2])  #cluser 2
 #all_cluster3=np.asarray([all_cells_clusters[i] for i in range(len(allall_cells_clusters)) if all_cells_clusters[:,3][i]==3])   #cluser 3
 
-# all_clusters0=np.asarray([all_cluster0[i] for i in range(len(all_cluster0))])
-# all_clusters1=np.asarray([all_cluster1[i] for i in range(len(all_cluster1))])
-# all_clusters2=np.asarray([all_cluster2[i] for i in range(len(all_cluster2))])
-# all_clusters3=np.asarray([all_cluster3[i] for i in range(len(all_cluster3))])
 
 
 mlab.figure(size = (1024,1080),

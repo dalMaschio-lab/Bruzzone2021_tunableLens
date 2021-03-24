@@ -1,6 +1,5 @@
-# Bruzzone-et-al.-2021
-
-Repository of the codes used 
+# Bruzzone2021_TunableLens
+Repository of the codes used.
 
 **_Arduino.ino_**   
 Code for the control of the ETL during volumetric scanning via the Arduino Mega 2560 board.
@@ -30,6 +29,11 @@ It contains several functions to extract and analyze the suite2p output.
 **_Polyfit.py_**  
 Code for the calculation of the coefficients for the polynomial fitting the measured look-up-table
 
+**_Looming_stimulation.py_**  
+Code for the creation of a looming stimulation and the communication with the Arduino. Once the script is running, it waits the frame trigger by the Arduino.
+The stimulation is based on Stytra [1]
 
+
+[1] Štih, V., Petrucco, L., Kist, A. M., & Portugues, R. (2019). Stytra: An open-source, integrated system for stimulation, tracking and closed-loop behavioral experiments. PLoS computational biology, 15(4), e1006699.
 
 
