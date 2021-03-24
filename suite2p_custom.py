@@ -505,7 +505,6 @@ this_ops = {
         'convKernel' : np.ones(10),    # average window
         'filtereTheDataAfterRegistration': 1,     #filter the data after registration
         'filtereTheDataBeforeRegistration': 0,     #filter the data before registration
-        
         'avoidSpikeDeconvolution' : True
     }
 

@@ -11,7 +11,8 @@ import serial
 import struct
 
 
-class ArduinoCommStimulus(DynamicStimulus): #mod by Enrico
+class ArduinoCommStimulus(DynamicStimulus): #mod by Chiarello
+    #Class for the communication with the Arduino
   
     def __init__(self, frameNumber, port ="/dev/tty.usbmodem14201", baudrate = 38400, timeout = None, **kwargs):
         super().__init__(**kwargs)
@@ -107,7 +108,7 @@ class LoomingProtocol(Protocol):
                )            
             
         return [
-            ArduinoCommStimulus(0),     
+            ArduinoCommStimulus(0),     #with the 0 inside the brankets, stytra starts as soon as the acquisition starts
             LoomingStimulus(
                         background_color=(255, 0, 0),
                         circle_color=(0, 0, 0),
@@ -119,7 +120,5 @@ class LoomingProtocol(Protocol):
 if __name__ == "__main__":
    
     s = Stytra(protocol=LoomingProtocol())
-    
-    
     s.exp._pyb.close()    # close the serial port
 
