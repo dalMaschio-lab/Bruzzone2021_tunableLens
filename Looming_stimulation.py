@@ -5,8 +5,6 @@ from stytra import Stytra
 from stytra.stimulation import Protocol
 from stytra.stimulation.stimuli import InterpolatedStimulus, CircleStimulus, TriggerStimulus, DynamicStimulus
 from lightparam import Param
-from stytra.triggering import Trigger, ZmqTrigger
-
 import serial
 import struct
 

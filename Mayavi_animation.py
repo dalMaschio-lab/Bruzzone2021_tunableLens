@@ -1,4 +1,4 @@
-
+import os
 import numpy as np
 import scipy as sc
 from mayavi import mlab
@@ -9,12 +9,12 @@ file_path=r'PATH\TO\SUBFOLDERS'
 planes=30
 spacing=6
 
+#
 all_cells=wholeBrain.cells_extraction(file_path, planes, spacing)   #see function in 'wholebrain_analysis.py'
 
 stim=(([1]*17)+([0]*150))*15+([0]*154) 
 regressor=np.convolve(np.array(stim), wholeBrain.calcium_kernel(1,4), mode='same').reshape(1,-1)    #see function in 'wholebrain_analysis.py'
-
-Tscores=wholeBrain.correlation(all_cells[:,2375:], regressor)
+Tscores=wholeBrain.correlation(all_cells[:,2375:], regressor)   #see function in 'wholebrain_analysis.py'
 
 
 percentile=0.95
@@ -28,7 +28,6 @@ activity_percentile=np.asarray([sc.stats.zscore(all_cells[i, 3:]) for i in range
 
 
 ###-------uncomment to subdivide the identified cells by clusters-------###
-#-then you have to create other mlab 3dpoints for the respective clusters-#
 
 #clusters_file=np.loadtxt('PATH\TO\THE\CLUSTERS.txt')    
 #count=0
@@ -46,11 +45,17 @@ activity_percentile=np.asarray([sc.stats.zscore(all_cells[i, 3:]) for i in range
 #all_cells_clusters=all_cells_clusters+activity_percentile
 
 #all_all=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==5]) #no clusters
-#all_cluster0=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==0])  #cluser 0
-#all_cluster1=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==1])  #cluser 1
-#all_cluster2=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==2])  #cluser 2
-#all_cluster3=np.asarray([all_cells_clusters[i] for i in range(len(allall_cells_clusters)) if all_cells_clusters[:,3][i]==3])   #cluser 3
+#all_cluster0=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==0])  #cluster 0
+#all_cluster1=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==1])  #cluster 1
+#all_cluster2=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==2])  #cluster 2
+#all_cluster3=np.asarray([all_cells_clusters[i] for i in range(len(allall_cells_clusters)) if all_cells_clusters[:,3][i]==3])   #cluster 3
 
+# mlab.figure(size = (1024,1080),
+#              bgcolor = (1,1,1), fgcolor = (0.8, 0.8, 0.8))
+#cluster0=mlab.points3d(all_cluster0[:,0], all_cluster0[:,1], all_cluster0[:,2], scale_factor=6, scale_mode='none', color=(0, 1, 0))
+#cluster1mlab.points3d(all_cluster1[:,0], all_cluster1[:,1], all_cluster1[:,2], scale_factor=6, scale_mode='none', color=(0, 0, 0))
+#cluster2=mlab.points3d(all_cluster2[:,0], all_cluster2[:,1], all_cluster2[:,2], scale_factor=6, scale_mode='none', color=(0, 0, 1))
+#cluster3=mlab.points3d(all_cluster3[:,0], all_cluster3[:,1], all_cluster3[:,2], scale_factor=6, scale_mode='none', color=(1, 0, 0))
 
 
 mlab.figure(size = (1024,1080),
@@ -70,7 +75,6 @@ cells_percentile.actor.actor.rotate_x(0)
 ms1 = cells_percentile.mlab_source
 
 
-import os
 out_path = 'OUTPUT\PATH'
 out_path = os.path.abspath(out_path)
 fps = 1
@@ -92,18 +96,3 @@ def anim():
         yield    
 anim()
 mlab.show()
-
-
-    
-    
-    
-    
-
-    
- 
-
-
-
-
-
-

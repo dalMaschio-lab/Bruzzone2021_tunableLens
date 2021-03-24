@@ -14,7 +14,7 @@ The source code must be compiled and deployed to the Arduino Mega 2560 board fol
 
 
 **_Mayavi_animation.py_**  
-Code to create the mayavi animation of the 'Supplementary Movie S1'. With the same code it is possible to create the images in Figure 5, the corrisponding part is just to uncomment.   
+Code to create the MayaVi[1] animation of the 'Supplementary Movie S1'. With the same code it is possible to create the images in Figure 5.   
 The following script relies on some functions in 'Wholebrain_analysis.py'.
 
 
@@ -31,9 +31,11 @@ Code for the calculation of the coefficients for the polynomial fitting the meas
 
 **_Looming_stimulation.py_**  
 Code for the creation of a looming stimulation and the communication with the Arduino. Once the script is running, it waits the frame trigger by the Arduino.
-The stimulation is based on Stytra [1]
+The stimulation is based on Stytra [2]
 
 
-[1] Štih, V., Petrucco, L., Kist, A. M., & Portugues, R. (2019). Stytra: An open-source, integrated system for stimulation, tracking and closed-loop behavioral experiments. PLoS computational biology, 15(4), e1006699.
+
+[1]
+[2] Štih, V., Petrucco, L., Kist, A. M., & Portugues, R. (2019). Stytra: An open-source, integrated system for stimulation, tracking and closed-loop behavioral experiments. PLoS computational biology, 15(4), e1006699.
 
 
