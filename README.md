@@ -35,7 +35,8 @@ The stimulation is based on Stytra [2]
 
 
 
-[1]
+
+[1] Ramachandran, P., & Varoquaux, G. (2011). Mayavi: 3D visualization of scientific data. Computing in Science & Engineering, 13(2), 40-51. 
 [2] Štih, V., Petrucco, L., Kist, A. M., & Portugues, R. (2019). Stytra: An open-source, integrated system for stimulation, tracking and closed-loop behavioral experiments. PLoS computational biology, 15(4), e1006699.
 
 
