@@ -12,11 +12,11 @@ The source code must be compiled and deployed to the Arduino Mega 2560 board fol
 5) If required, modify in the source code the parameters to match the experimental conditions
 6) By clicking the upload button, the code is compiled and deployed to the Arduino Mega 2560 board   
 
-<<<<<<< HEAD
+
 **_Looming_stimulation.py_**  
 Code for the creation of a looming stimulation and the communication with the Arduino. Once the script is running, it waits the frame trigger by the Arduino.
 The stimulation is based on Stytra [1]
-=======
+
 **_Polyfit.py_**  
 Code for the calculation of the coefficients for the polynomial fitting the measured look-up-table
 
@@ -24,7 +24,6 @@ Code for the calculation of the coefficients for the polynomial fitting the meas
 Code for the creation of a looming stimulation and the communication with the Arduino. Once the script is running, it waits the frame trigger by the Arduino.
 The stimulation is based on Stytra [2]
 
->>>>>>> 5e7eb08fcc63bec871efb4ccc36306e053d267df
 
 **_Mayavi_animation.py_**  
 Code to create the MayaVi[2] animation of the 'Supplementary Movie S1'. With the same code it is possible to create the images in Figure 5.   
@@ -39,15 +38,10 @@ Code to analyse the RGC acquisition data. The script is fed with the data.raw an
 It contains several functions to extract and analyze the suite2p output.   
 
 
-<<<<<<< HEAD
 **_Polyfit.py_**  
 Code for the calculation of the coefficients for the polynomial fitting the measured look-up-table.
-=======
 
 
-
-
->>>>>>> 5e7eb08fcc63bec871efb4ccc36306e053d267df
 
 **_suite2p_custom.py_**   
 Code to run suite2p [3] with our custom parameters.   
