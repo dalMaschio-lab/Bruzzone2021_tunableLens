@@ -1,9 +1,5 @@
 import numpy as np
 from sklearn import linear_model, metrics
-from sklearn.cluster import AgglomerativeClustering
-import scipy.cluster.hierarchy as sch
-
-
 
 class wholeBrain:
     def __init__(self):
@@ -128,3 +124,38 @@ class wholeBrain:
                     file_len+=1
                     
         return all_cells
+
+
+    def correlaton(x,y):
+        #Code to map the tseries averaged plane to the z-stack data
+        #x: tseries data
+        #y: z-stack data
+        
+        n_planes=30
+        n_frames=18000
+        initial_frame=300*n_planes
+        end_frame=initial_frame+n_frames
+        x = np.reshape(x, (-1, 512,  1024))
+        y = np.reshape(y, (-1, 512,  1024))
+        x=x[initial_frame:end_frame] 
+
+        tseries_plane=[]
+        zstack_plane=[]
+        for p in range(n_planes):
+            seq=[]
+            for i in range(p, len(x), n_planes):
+                seq.append(x[i])
+            seq=np.asarray(seq)
+            seq_01=seq.mean(axis=0)
+            seq=[]
+            scores=[]
+            for j in range(len(y)): 
+                corr=np.corrcoef(seq_01.ravel(), y[j].ravel())
+                scores.append(corr[0,1])
+            tseries_plane.append(p)
+            zstack_plane.append(np.argmax(scores))
+            scores=[]
+
+        final=np.column_stack((tseries_plane,zstack_plane))
+            
+        return final
