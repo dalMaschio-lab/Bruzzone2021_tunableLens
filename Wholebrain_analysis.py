@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn import linear_model, metrics
 
+
 class wholeBrain:
     def __init__(self):
         pass
