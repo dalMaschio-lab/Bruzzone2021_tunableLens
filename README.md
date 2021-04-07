@@ -45,12 +45,6 @@ Code for the calculation of the coefficients for the polynomial fitting the meas
 **_suite2p_custom.py_**   
 Code to run suite2p [3] with our custom parameters.   
 
-**_antsRegistration.sh_**   
-Code to register the acquired z-stack to the standard brain.
-
-**_antsApplyTransformToPoints.sh_**
-Code to convert the ROIs (x,y,z) information in the fixed anatomical space. 
-
 
 
 [1] Štih, V., Petrucco, L., Kist, A. M., & Portugues, R. (2019). Stytra: An open-source, integrated system for stimulation, tracking and closed-loop behavioral experiments. PLoS computational biology, 15(4), e1006699.   
