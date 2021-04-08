@@ -27,12 +27,12 @@ class wholeBrain:
         # traces: the fluorescent traces for each cells. You can use the output of the 'cells_extraction' function. Just pay care to remove the first elements of the traces (coordinates)
         # regressors: it accepts a list of multiple regressors or a single array
 
-        # return a list containing the Tscores
+        # return a list containing the scores
         
         clf = linear_model.LinearRegression(fit_intercept=False)
         rows= len(traces[:,0])
-        Tscores_int=[]
-        Tscores=[]
+        scores_int=[]
+        scores=[]
         if len(regressors)>1:
             for i in range(len(regressors)):
                 Tscores_int=[]
@@ -41,22 +41,20 @@ class wholeBrain:
                     cell=(traces[j]).reshape(-1,1)
                     coeffs0=clf.fit(reg,cell).coef_ 
                     error=metrics.mean_squared_error(reg,cell)
-                    Tscore=np.divide(coeffs0,error)
-                    Tscores_int.append(Tscore)
+                    score=np.divide(coeffs0,error)
+                    scores_int.append(score)
 
-                Tscores.append(Tscores_int)
+                scores.append(Tscores_int)
                 print(f'{i/len(regressors)*100} completed')
 
         elif len(regressors)==1:
             reg=regressors.reshape(-1,1)
             for j in range(rows):
                 cell=(traces[j]).reshape(-1,1)
-                coeffs0=clf.fit(reg,cell).coef_ 
-                error=metrics.mean_squared_error(reg,cell)
-                Tscore=np.divide(coeffs0,error)
-                Tscores.append(Tscore)
+                score=np.corrcoef(reg,cell)
+                scores.append(score[0,1])
 
-        return Tscores
+        return scores
 
 
 
