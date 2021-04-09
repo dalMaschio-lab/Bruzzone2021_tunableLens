@@ -48,9 +48,9 @@ Code to run suite2p [3] with our custom parameters.
 
 
 **_antsRegistration.sh_**   
-Code to register the acquired z-stack to the standard brain.
+Code to register the acquired z-stack to the standard brain.   
 
-**_antsApplyTransformToPoints.sh_**
+**_antsApplyTransformToPoints.sh_**   
 Code to convert the ROIs (x,y,z) information in the fixed anatomical space. 
 
 
