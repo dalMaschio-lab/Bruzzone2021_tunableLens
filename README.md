@@ -31,7 +31,7 @@ The following script relies on some functions in 'Wholebrain_analysis.py'.
 
 
 **_RGC_analysis.py_**  
-Code to analyze the RGC acquisition data. The script is fed with the data.raw and stimulation.csv and, for the desired plane, it calculate the pixel-wise correlation between the image and the regressor created from the information about the stimulation.   
+Code to analyse the RGC acquisition data. The script is fed with the data.raw and stimulation.csv and, for the desired plane, it calculate the pixel-wise correlation between the image and the regressor created from the information about the stimulation.   
 
 
 **_Wholebrain_analysis.py_**  
@@ -42,10 +42,14 @@ It contains several functions to extract and analyze the suite2p output.
 Code for the calculation of the coefficients for the polynomial fitting the measured look-up-table.
 
 
+
 **_suite2p_custom.py_**   
 Code to run suite2p [3] with our custom parameters.   
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 243b07a (Added ANTs)
 
 [1] Štih, V., Petrucco, L., Kist, A. M., & Portugues, R. (2019). Stytra: An open-source, integrated system for stimulation, tracking and closed-loop behavioral experiments. PLoS computational biology, 15(4), e1006699.   
 [2] Ramachandran, P., & Varoquaux, G. (2011). Mayavi: 3D visualization of scientific data. Computing in Science & Engineering, 13(2), 40-51.   
