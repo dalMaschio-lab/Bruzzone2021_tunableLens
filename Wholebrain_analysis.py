@@ -125,7 +125,7 @@ class wholeBrain:
         return all_cells
 
 
-    def planes_mapping(x,y):
+    def correlaton(x,y):
         #Code to map the tseries averaged plane to the z-stack data
         #x: tseries data
         #y: z-stack data
