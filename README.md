@@ -20,10 +20,6 @@ The stimulation is based on Stytra [1]
 **_Polyfit.py_**  
 Code for the calculation of the coefficients for the polynomial fitting the measured look-up-table
 
-**_Looming_stimulation.py_**  
-Code for the creation of a looming stimulation and the communication with the Arduino. Once the script is running, it waits the frame trigger by the Arduino.
-The stimulation is based on Stytra [2]
-
 
 **_Mayavi_animation.py_**  
 Code to create the MayaVi[2] animation of the 'Supplementary Movie S1'. With the same code it is possible to create the images in Figure 5.   
