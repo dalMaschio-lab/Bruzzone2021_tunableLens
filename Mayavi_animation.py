@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import scipy as sc
+import nrrd
 from mayavi import mlab
 from tvtk.api import tvtk
 from Wholebrain_analysis import wholeBrain
@@ -44,14 +45,19 @@ activity_percentile=np.asarray([sc.stats.zscore(all_cells[i, 3:]) for i in range
 #all_cells_clusters=np.asarray(all_cells_clusters).T
 #all_cells_clusters=all_cells_clusters+activity_percentile
 
+
 #all_all=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==5]) #no clusters
 #all_cluster0=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==0])  #cluster 0
 #all_cluster1=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==1])  #cluster 1
 #all_cluster2=np.asarray([all_cells_clusters[i] for i in range(len(all_cells_clusters)) if all_cells_clusters[:,3][i]==2])  #cluster 2
 #all_cluster3=np.asarray([all_cells_clusters[i] for i in range(len(allall_cells_clusters)) if all_cells_clusters[:,3][i]==3])   #cluster 3
+#mesh,_=nrrd.read(r'mesh.nrrd')
+
 
 # mlab.figure(size = (1024,1080),
 #              bgcolor = (1,1,1), fgcolor = (0.8, 0.8, 0.8))
+
+#mlab.contour3d(mesh, opacity=0.02, line_width=3)
 #cluster0=mlab.points3d(all_cluster0[:,0], all_cluster0[:,1], all_cluster0[:,2], scale_factor=6, scale_mode='none', color=(0, 1, 0))
 #cluster1mlab.points3d(all_cluster1[:,0], all_cluster1[:,1], all_cluster1[:,2], scale_factor=6, scale_mode='none', color=(0, 0, 0))
 #cluster2=mlab.points3d(all_cluster2[:,0], all_cluster2[:,1], all_cluster2[:,2], scale_factor=6, scale_mode='none', color=(0, 0, 1))
